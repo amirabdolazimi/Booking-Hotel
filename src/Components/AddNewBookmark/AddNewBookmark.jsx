@@ -38,7 +38,6 @@ const AddNewBookmark = () => {
         setCountry(data.countryName);
         setCountryCode(data.countryCode);
       } catch (err) {
-        // console.log(error.message);
         toast.error(err.message);
       } finally {
         setIsLoadingGeoCoding(false);
@@ -47,7 +46,6 @@ const AddNewBookmark = () => {
 
     fetchLocationData();
   }, [lat, lng]);
-  // console.log(lat, lng);
   const handleSubmit = async (e) => {
     e.preventDefault();
 

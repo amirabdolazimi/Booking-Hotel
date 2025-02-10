@@ -1,7 +1,10 @@
 import useFetch from "../../hooks/useFetch";
 
 const LocationList = () => {
-  const { data, isLoading } = useFetch("http://localhost:5000/hotels", "");
+  const { data, isLoading } = useFetch(
+    "https://booking-hotel-server.liara.run/hotels",
+    ""
+  );
 
   if (isLoading) return <p>Loading ....</p>;
 
@@ -9,7 +12,7 @@ const LocationList = () => {
     <div className="nearbyLocation">
       <h2>Nearby Locations</h2>
       <div className="locationList">
-        {data.map((item) => (
+        {data?.map((item) => (
           <div className="locationItem" key={item.id}>
             <img src={item.medium_url} alt={item.name} />
             <div className="locationItemDesc">

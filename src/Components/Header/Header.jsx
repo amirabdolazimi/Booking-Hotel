@@ -62,7 +62,6 @@ const Header = () => {
 
     navigate({ pathname: "/hotels", search: encodedParams.toString() });
 
-    // console.log(encodedParams.get("options"), "sss");
   };
   return (
     <div className="header">

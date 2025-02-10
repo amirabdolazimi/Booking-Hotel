@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000/hotels";
+const BASE_URL = "https://booking-hotel-server.liara.run/hotels";
 
 const HotelsContext = createContext();
 const HotelsProvider = ({ children }) => {
@@ -21,7 +21,7 @@ const HotelsProvider = ({ children }) => {
   //   );
 
   const { isLoading, data: hotels } = useFetch(
-    "http://localhost:5000/hotels",
+    "https://booking-hotel-server.liara.run/hotels",
     `q=${destination || ""}&accommodates_gte=${room || ""}`
   );
 
